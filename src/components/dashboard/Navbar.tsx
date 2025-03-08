@@ -26,6 +26,7 @@ import {
   MapPin,
   Home,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
   userType?: "user" | "admin";
@@ -119,14 +120,14 @@ const Navbar: React.FC<NavbarProps> = ({
         {/* Center section: Navigation links (desktop only) */}
         <div className="hidden md:flex items-center space-x-4">
           {navLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
-              href={link.href}
+              to={link.href}
               className="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:bg-gray-100 hover:text-gray-900"
             >
               {link.icon}
               <span className="ml-2">{link.name}</span>
-            </a>
+            </Link>
           ))}
         </div>
 
